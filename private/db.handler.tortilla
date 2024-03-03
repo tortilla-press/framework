@@ -9,10 +9,10 @@
         //oh well :(
       }
 
-      public class DB{
+      /*public class DB{
         static function raw(string $exec, array $prompts = []){
             global $conn;
-            
+
         }
-      }
+      }*/
 ?>
