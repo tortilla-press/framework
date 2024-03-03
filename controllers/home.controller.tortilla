@@ -1,6 +1,6 @@
 <?php
     namespace App\Controllers;
-    public class HomeController{
+    class HomeController{
         public function Home(){
             view('index.view.tortilla');
         }
