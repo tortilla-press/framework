@@ -4,7 +4,11 @@ $curpath = '/'.$_GET["path"];
 
 if($routes[$curpath] != null){
     $routeD = $routes[$curpath];
-    die(require($_SERVER['DOCUMENT_ROOT'].'/views/'.$routeD->view));
+    if(isset($routeD->settings))
+        foreach($routeD->settings["extend"] as $ext)
+            require($_SERVER['DOCUMENT_ROOT'].'/views/'.$ext);
+    require($_SERVER['DOCUMENT_ROOT'].'/views/'.$routeD->view);
+    die();
 }else{
     die(require($_SERVER['DOCUMENT_ROOT'].'/views/errors/404.view.tortilla'));
 }

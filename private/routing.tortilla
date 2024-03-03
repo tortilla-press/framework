@@ -4,10 +4,12 @@
     class Route{
         public $view;
         public $url;
-        function __construct(string $routeURL, string $relativeView) {
+        public $settings;
+        function __construct(string $routeURL, string $relativeView, array $extraSettings = []) {
             global $routes;
             $this->view = $relativeView;
             $this->url = $routeURL;
+            $this->settings = $extraSettings;
             $routes[$routeURL] = $this;
         }
     }

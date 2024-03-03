@@ -1,4 +1,8 @@
 <?php
-    new Route("/", "index.view.tortilla");
+    new Route("/", "index.view.tortilla", [
+        "extend" => [
+            "includes/nav.view.tortilla"
+        ]
+    ]);
     new Route("/url", "fr.view.tortilla");
 ?>
