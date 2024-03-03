@@ -8,4 +8,11 @@
       } catch(PDOException $e) {
         //oh well :(
       }
+
+      public class DB{
+        static function raw(string $exec, array $prompts = []){
+            global $conn;
+            
+        }
+      }
 ?>
