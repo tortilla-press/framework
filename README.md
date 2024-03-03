@@ -1,4 +1,5 @@
 # not ready yet just showing progress
+#### You should never need to edit anything in /private. If you need to you most likely don't or it's a bug that you should notify us of.
 ## Routing Examples (Route definitions are located in /routes/web.tortilla)
 ### Using controllers
 ```php
