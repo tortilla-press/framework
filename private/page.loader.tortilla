@@ -11,7 +11,7 @@ if($routes[$curpath] != null){
         view($routeD->view);
     else{
         $extd = explode($routeD->view, '.');
-var_dump($extd)
+var_dump($extd);
         $class = $extd[0];
         $func = $extd[1];
         (new $class)->$func();
