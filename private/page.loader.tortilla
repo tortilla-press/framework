@@ -10,7 +10,7 @@ if($routes[$curpath] != null){
     if(strpos( $routeD->view, 'view.tortilla' ) == true){
         view($routeD->view);
     }else{
-        $extd = explode('.', $routeD->view);
+        $extd = explode('@', $routeD->view);
         $class = 'App\\Controllers\\'.$extd[0];
         $func = $extd[1];
         (new $class)->$func();
