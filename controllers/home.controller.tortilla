@@ -1,8 +1,7 @@
 <?php
     namespace App\Controllers;
-    class HomeController{
+    class HomeController extends Tortilla{
         public function Home(){
-            global $string;
             echo $string->verify("apple", ["min:9", "max:11"]);
             view('index.view.tortilla');
         }
