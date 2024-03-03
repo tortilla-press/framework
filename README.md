@@ -22,3 +22,13 @@
         ]
     ]);
 ```
+## Controller Examples (Controller definitions are located in /routes/web.tortilla)
+### You can add as many controllers as you want as long as they have the specific .controller.tortilla file ending.
+```php
+    namespace App\Controllers;
+    class HomeController{
+        public function Home(){
+            view('index.view.tortilla');
+        }
+    }
+```
