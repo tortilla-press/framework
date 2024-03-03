@@ -6,6 +6,7 @@ try{
     require $file;
 }
     require($_SERVER['DOCUMENT_ROOT'].'/private/db.handler.tortilla');
+    require($_SERVER['DOCUMENT_ROOT'].'/private/credentials.tortilla');
     require($_SERVER['DOCUMENT_ROOT'].'/private/view.parse.tortilla');
     require($_SERVER['DOCUMENT_ROOT'].'/private/routing.tortilla');
     require($_SERVER['DOCUMENT_ROOT'].'/routes/web.tortilla');
