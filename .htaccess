@@ -1,0 +1,8 @@
+AddType application/x-httpd-php .tortilla
+DirectoryIndex index.tortilla
+
+RewriteCond %{REQUEST_FILENAME}.tortilla -f
+RewriteRule !.*\.tortilla$ %{REQUEST_FILENAME}.tortilla [QSA,L]
+
+RewriteEngine on
+RewriteRule ^(.*)$ /index.tortilla?path=$1 [NC,L,QSA]
