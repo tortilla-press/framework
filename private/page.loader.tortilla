@@ -1,5 +1,5 @@
 <?php
-$env = parse_ini_file($_SERVER['DOCUMENT_ROOT'].'/config.env');
+
 $curpath = '/'.$_GET["path"];
 
 if($routes[$curpath] != null){
