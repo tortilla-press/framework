@@ -1,5 +1,6 @@
 <?php
-    new Route("/", "index.view.tortilla", [
+    using App\Controllers;
+    new Route("/", "HomeController.Home", [
         "extend" => [
             "includes/nav.view.tortilla"
         ]

@@ -1,0 +1,5 @@
+<?php
+    function view(string $path){
+        require($_SERVER['DOCUMENT_ROOT'].'/views/'.$path);
+    }
+?>

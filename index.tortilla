@@ -1,6 +1,7 @@
 <?php
 try{
     $privenv = ["version" => "0.0.1"];
+    require($_SERVER['DOCUMENT_ROOT'].'/private/view.parse.tortilla');
     require($_SERVER['DOCUMENT_ROOT'].'/private/routing.tortilla');
     require($_SERVER['DOCUMENT_ROOT'].'/routes/web.tortilla');
     

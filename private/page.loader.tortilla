@@ -6,8 +6,16 @@ if($routes[$curpath] != null){
     $routeD = $routes[$curpath];
     if(isset($routeD->settings))
         foreach($routeD->settings["extend"] as $ext)
-            require($_SERVER['DOCUMENT_ROOT'].'/views/'.$ext);
-    require($_SERVER['DOCUMENT_ROOT'].'/views/'.$routeD->view);
+            view($ext);
+    if(strpos( $routeD->view, 'view.tortilla' ) === true)
+        view($routeD->view);
+    else{
+        $extd = explode($routeD->view, '.');
+        $class = $extd[0];
+        $func = $extd[1];
+        (new $class)->$func();
+    }
+        
     die();
 }else{
     die(require($_SERVER['DOCUMENT_ROOT'].'/views/errors/404.view.tortilla'));
