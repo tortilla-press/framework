@@ -1,9 +1,9 @@
 <?php
-error_reporting(E_ALL);
-ini_set('display_errors', '1');
-
 try{
     $privenv = ["version" => "0.0.1"];
+    foreach(glob($_SERVER['DOCUMENT_ROOT']."/controllers/*.php") as $file){
+    require $file;
+}
     require($_SERVER['DOCUMENT_ROOT'].'/private/view.parse.tortilla');
     require($_SERVER['DOCUMENT_ROOT'].'/private/routing.tortilla');
     require($_SERVER['DOCUMENT_ROOT'].'/routes/web.tortilla');
