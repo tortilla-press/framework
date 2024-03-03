@@ -22,8 +22,8 @@ new Route("/", "HomeController@Home", [
     ]
 ]);
 ```
-## Controller Examples (Controller definitions are located in /routes/web.tortilla)
-### You can add as many controllers as you want as long as they have the specific .controller.tortilla file ending.
+## Controller Examples (Controller definitions are located in /controllers)
+#### You can add as many controllers as you want as long as they have the specific .controller.tortilla file ending.
 ### This controller returns a view file when it's called by a route
 ```php
 namespace App\Controllers;
