@@ -1,0 +1,11 @@
+<?php
+$env = parse_ini_file($_SERVER['DOCUMENT_ROOT'].'/config.env');
+$curpath = '/'.$_GET["path"];
+
+if($routes[$curpath] != null){
+    $routeD = $routes[$curpath];
+    die(require($_SERVER['DOCUMENT_ROOT'].'/views/'.$routeD->view));
+}else{
+    die(require($_SERVER['DOCUMENT_ROOT'].'/views/errors/404.view.tortilla'));
+}
+?>

@@ -1,0 +1,12 @@
+<?php
+try{
+    $privenv = ["version" => "0.0.1"];
+    require($_SERVER['DOCUMENT_ROOT'].'/private/routing.tortilla');
+    require($_SERVER['DOCUMENT_ROOT'].'/routes/web.tortilla');
+    
+    /* THE LINE BELOW MUST STAY LAST */
+    require($_SERVER['DOCUMENT_ROOT'].'/private/page.loader.tortilla');
+}catch(Exception $e){
+    require($_SERVER['DOCUMENT_ROOT'].'/views/errors/500.view.tortilla');
+}
+?>

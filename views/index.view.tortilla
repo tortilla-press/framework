@@ -1,0 +1,3 @@
+welcome from <?=$env["site_name"]?>!
+<br>
+wanna know what the site's configured url is? <a href="/url">click here</a>

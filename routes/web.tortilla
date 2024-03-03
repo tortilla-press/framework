@@ -1,0 +1,4 @@
+<?php
+    new Route("/", "index.view.tortilla");
+    new Route("/url", "fr.view.tortilla");
+?>

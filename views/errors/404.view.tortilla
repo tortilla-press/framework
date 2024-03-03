@@ -1,0 +1,4 @@
+<h2><b>Error 404</b></h2>
+<p>Page not found!</p>
+<hr>
+Running on <b>Tortilla.Press</b> version <?=$privenv["version"]?> with <b>PHP</b> version <?=phpversion()?>

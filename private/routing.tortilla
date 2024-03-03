@@ -1,0 +1,14 @@
+<?php
+    $routes = [];
+
+    class Route{
+        public $view;
+        public $url;
+        function __construct(string $routeURL, string $relativeView) {
+            global $routes;
+            $this->view = $relativeView;
+            $this->url = $routeURL;
+            $routes[$routeURL] = $this;
+        }
+    }
+?>
