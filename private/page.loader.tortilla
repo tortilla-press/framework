@@ -7,7 +7,7 @@ if($routes[$curpath] != null){
     if(isset($routeD->settings))
         foreach($routeD->settings["extend"] as $ext)
             view($ext);
-    if(strpos( $routeD->view, 'view.tortilla' ) === true){
+    if(strpos( $routeD->view, 'view.tortilla' ) == true){
         view($routeD->view);
     }else{
         $extd = explode('.', $routeD->view);
