@@ -11,9 +11,9 @@ if($routes[$curpath] != null){
         view($routeD->view);
     else{
         $extd = explode('.', $routeD->view);
-        $class = $extd[0];
+        $class = 'App\Controllers\'.$extd[0];
         $func = $extd[1];
-        (new App\Controllers\$class)->$func();
+        (new $class)->$func();
     }
         
     die();
