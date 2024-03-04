@@ -13,7 +13,7 @@
   <div class="flex-initial w-2/4">
     <div>
       <div class="card-body">
-          <h2 class="card-title">Thank you for installing Tortilla.Press 😻 <?=$FrameworkName?></h2>
+          <h2 class="card-title">Thank you for installing <?=$FrameworkName?> 😻</h2>
           <p>Check out the <a href="#">GitHub Repository</a> for documentation</p>
       </div>
     </div>
