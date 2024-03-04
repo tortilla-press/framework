@@ -25,12 +25,24 @@ new Route("/", "HomeController@Home", [
 ```
 ## Controller Examples (Controller definitions are located in /controllers)
 #### You can add as many controllers as you want as long as they have the specific .controller.tortilla file ending.
-### This controller returns a view file when it's called by a route
+### This controller returns a view file when it's called by a route and defines a variable that can be used in the view file
 ```php
-namespace App\Controllers;
-class HomeController{
-    public function Home(){
-        view('index.view.tortilla');
+    namespace App\Controllers;
+    class HomeController extends Tortilla{
+        public function Home(){
+            return view('index.view.tortilla', [
+                "FrameworkName" => "Tortilla.Press"
+            ]);
+        }
     }
-}
 ```
+### This controller just returns a view file
+```php
+    namespace App\Controllers;
+    class HomeController extends Tortilla{
+        public function Home(){
+            return view('index.view.tortilla');
+        }
+    }
+```
+### JSON Functions coming soon!
