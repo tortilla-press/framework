@@ -11,11 +11,11 @@
 <body>
 <div class="flex">
   <div class="flex-initial w-2/4">
-    <div class="card bg-base-100 shadow-xl">
-    <div class="card-body">
-        <h2 class="card-title">Thank you for installing Tortilla.Press!</h2>
-        <p>Have fun :^)</p>
-    </div>
+    <div>
+      <div class="card-body">
+          <h2 class="card-title">Thank you for installing Tortilla.Press 😻</h2>
+          <p>Check out the <a href="#">GitHub Repository</a> for documentation</p>
+      </div>
     </div>
   </div>
 </div>
