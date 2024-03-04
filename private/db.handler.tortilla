@@ -1,18 +1,19 @@
 <?php
-    try {
-        $conn = new PDO("mysql:host={$env["mysql_host"]};dbname={$env["mysql_database"]}", $env["mysql_username"], $env["mysql_password"]);
-        // set the PDO error mode to exception
-        $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-        $conn->setAttribute( PDO::ATTR_EMULATE_PREPARES, false );
-        echo "Connected successfully";
-      } catch(PDOException $e) {
-        //oh well :(
-      }
+try {
+    $env = parse_ini_file($_SERVER['DOCUMENT_ROOT'].'/config.ini');
+    $conn = new PDO("mysql:host={$env["mysql_host"]};dbname={$env["mysql_database"]}", $env["mysql_username"], $env["mysql_password"]);
+    // set the PDO error mode to exception
+    $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    $conn->setAttribute(PDO::ATTR_EMULATE_PREPARES, false);
+    echo "Connected successfully";
+} catch (PDOException $e) {
+    //oh well :(
+}
 
-      /*public class DB{
-        static function raw(string $exec, array $prompts = []){
-            global $conn;
+/*public class DB{
+  static function raw(string $exec, array $prompts = []){
+      global $conn;
 
-        }
-      }*/
+  }
+}*/
 ?>
