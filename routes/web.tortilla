@@ -1,13 +1,4 @@
 <?php
     //use App\Controllers\HomeController;
-    new Route("/", "HomeController@Home", [
-        "extend" => [
-            "includes/nav.view.tortilla"
-        ]
-    ]);
-    new Route("/url", "fr.view.tortilla", [
-        "extend" => [
-            "includes/nav.view.tortilla"
-        ]
-    ]);
+    new Route("/", "HomeController@Home");
 ?>
