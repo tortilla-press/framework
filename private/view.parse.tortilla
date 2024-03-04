@@ -1,7 +1,9 @@
 <?php
 $env = parse_ini_file($_SERVER['DOCUMENT_ROOT'].'/config.env');
-    function view(string $path){
-global $env;
+    function view(string $path, array $gvars = []){
+        global $env;
+        foreach($gvars as $k => $v)
+            $$k = $v;
         require($_SERVER['DOCUMENT_ROOT'].'/views/'.$path);
     }
 ?>

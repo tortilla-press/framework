@@ -2,8 +2,9 @@
     namespace App\Controllers;
     class HomeController extends Tortilla{
         public function Home(){
-            $lordylord = "what";
-            return view('index.view.tortilla');
+            return view('index.view.tortilla', [
+                "FrameworkName" => "Tortilla.Press"
+            ]);
         }
     }
 ?>
