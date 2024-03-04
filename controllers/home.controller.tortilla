@@ -2,8 +2,7 @@
     namespace App\Controllers;
     class HomeController extends Tortilla{
         public function Home(){
-            echo $this->verify("apple", ["min:9", "max:11"])."<br>";
-            view('index.view.tortilla');
+            return view('index.view.tortilla');
         }
     }
 ?>
