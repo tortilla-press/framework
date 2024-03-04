@@ -1,23 +1,22 @@
 <?php
+$curpath = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
 
-$curpath = '/'.$_GET["path"];
-
-if($routes[$curpath] != null){
+if (isset($routes[$curpath])) {
     $routeD = $routes[$curpath];
-    if(isset($routeD->settings))
-        foreach($routeD->settings["extend"] as $ext)
+    if (isset($routeD->settings))
+        foreach ($routeD->settings["extend"] as $ext)
             view($ext);
-    if(strpos( $routeD->view, 'view.tortilla' ) == true){
+    if (strpos($routeD->view, 'view.tortilla') == true) {
         view($routeD->view);
-    }else{
+    } else {
         $extd = explode('@', $routeD->view);
-        $class = 'App\\Controllers\\'.$extd[0];
+        $class = 'App\\Controllers\\' . $extd[0];
         $func = $extd[1];
         (new $class)->$func();
     }
-        
+
     die();
-}else{
-    die(require($_SERVER['DOCUMENT_ROOT'].'/views/errors/404.view.tortilla'));
+} else {
+    die(require($_SERVER['DOCUMENT_ROOT'] . '/views/errors/404.view.tortilla'));
 }
 ?>
