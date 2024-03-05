@@ -1,0 +1,14 @@
+<?php
+      class DB{
+        public static function raw(string $exec, array $prompts = []){
+          global $conn;
+          $newq = $conn->prepare($exec);
+          if(count($prompts) <= 0)
+            $newq->execute();
+          else
+            $newq->execute($prompts);
+
+        return $newq;    
+        }
+      }
+?>

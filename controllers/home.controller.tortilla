@@ -1,6 +1,5 @@
 <?php
-    namespace App\Controllers;
-    class HomeController extends Tortilla{
+    class HomeController{
         public function Home(){
             return view('index.view.tortilla', [
                 "FrameworkName" => "Tortilla.Press"

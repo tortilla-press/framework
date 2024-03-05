@@ -1,0 +1,42 @@
+<?php
+    class Model{
+        private static $where;
+        private static $whereparas = [];
+        private static $limit;
+
+        public static function get(){
+            $queer = "SELECT * FROM `".static::$table."` ".static::$where." ".static::$limit;
+            if(!empty(static::$whereparas))
+                return DB::raw($queer, static::$whereparas)->fetchAll(PDO::FETCH_OBJ);
+            else
+                return DB::raw($queer)->fetchAll(PDO::FETCH_OBJ);
+        }
+
+        public static function first(){
+            $queer = "SELECT * FROM `".static::$table."` ".static::$where." ".static::$limit;
+            if(!empty(static::$whereparas))
+                return DB::raw($queer, static::$whereparas)->fetch(PDO::FETCH_OBJ);
+            else
+                return DB::raw($queer)->fetch(PDO::FETCH_OBJ);
+        }
+
+        public static function where(array $params){
+            $cup = 0;
+            foreach($params as $param){
+                static::$whereparas[] = $param[2];
+                if($cup == 0)
+                    static::$where = "WHERE `{$param[0]}` {$param[1]} ?";
+                else
+                    static::$where .= " AND `{$param[0]}` {$param[1]} ?";
+                $cup++;
+            }
+            return new static();
+        }
+
+        public static function limit(int $lim){
+            static::$whereparas[] = $lim;
+            static::$limit = "LIMIT ?";
+            return new static();
+        }
+    }
+?>

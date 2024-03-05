@@ -1,19 +1,18 @@
 <?php
-try{
-    $privenv = ["version" => "0.0.1"];
-    require($_SERVER['DOCUMENT_ROOT'].'/private/credentials.tortilla');
-
-    foreach(glob($_SERVER['DOCUMENT_ROOT']."/controllers/*.controller.tortilla") as $file){
+$env = parse_ini_file($_SERVER['DOCUMENT_ROOT'].'/config.env');
+$privenv = ["version" => "0.0.2"];
+require($_SERVER['DOCUMENT_ROOT'].'/private/models.tortilla');
+require($_SERVER['DOCUMENT_ROOT'].'/private/space.tortilla');
+require($_SERVER['DOCUMENT_ROOT'].'/private/credentials.tortilla');
+foreach(glob($_SERVER['DOCUMENT_ROOT']."/models/*.tortilla") as $file)
     require $file;
-}
-    require($_SERVER['DOCUMENT_ROOT'].'/private/db.handler.tortilla');
-    require($_SERVER['DOCUMENT_ROOT'].'/private/view.parse.tortilla');
-    require($_SERVER['DOCUMENT_ROOT'].'/private/routing.tortilla');
-    require($_SERVER['DOCUMENT_ROOT'].'/routes/web.tortilla');
-    
-    /* THE LINE BELOW MUST STAY LAST */
-    require($_SERVER['DOCUMENT_ROOT'].'/private/page.loader.tortilla');
-}catch(Exception $e){
-    require($_SERVER['DOCUMENT_ROOT'].'/views/errors/500.view.tortilla');
-}
+foreach(glob($_SERVER['DOCUMENT_ROOT']."/controllers/*.controller.tortilla") as $file)
+    require $file;
+require($_SERVER['DOCUMENT_ROOT'].'/private/db.handler.tortilla');
+require($_SERVER['DOCUMENT_ROOT'].'/private/view.parse.tortilla');
+require($_SERVER['DOCUMENT_ROOT'].'/private/routing.tortilla');
+require($_SERVER['DOCUMENT_ROOT'].'/routes/web.tortilla');
+
+/* THE LINE BELOW MUST STAY LAST */
+require($_SERVER['DOCUMENT_ROOT'].'/private/page.loader.tortilla');
 ?>
