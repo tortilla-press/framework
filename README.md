@@ -45,4 +45,8 @@ new Route("/", "HomeController@Home", [
         }
     }
 ```
-### JSON Functions coming soon!
+## Model Examples (Controller definitions are located in /models)
+### Get the first user
+```php
+User::where([['id', '=', '1']])->first();
+```
