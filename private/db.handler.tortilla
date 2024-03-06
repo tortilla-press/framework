@@ -1,4 +1,5 @@
 <?php
+//$env = parse_ini_file($_SERVER['DOCUMENT_ROOT'].'/config.env');
     try {
         $conn = new PDO("mysql:host={$env["mysql_host"]};dbname={$env["mysql_database"]}", $env["mysql_username"], $env["mysql_password"]);
         // set the PDO error mode to exception
