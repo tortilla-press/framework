@@ -1,9 +1,12 @@
 <?php
-ini_set('display_errors', '1');
-ini_set('display_startup_errors', '1');
-error_reporting(E_ALL);
-
 $env = parse_ini_file($_SERVER['DOCUMENT_ROOT'].'/config.env');
+
+if($env["development"] == "true"){
+    ini_set('display_errors', '1');
+    ini_set('display_startup_errors', '1');
+    error_reporting(E_ALL);
+}
+
 $privenv = ["version" => "0.0.2"];
 require($_SERVER['DOCUMENT_ROOT'].'/private/models.tortilla');
 require($_SERVER['DOCUMENT_ROOT'].'/private/space.tortilla');
