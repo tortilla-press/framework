@@ -1,4 +1,5 @@
 <?php
+error_reporting(E_ALL);
 $env = parse_ini_file($_SERVER['DOCUMENT_ROOT'].'/config.env');
 $privenv = ["version" => "0.0.2"];
 require($_SERVER['DOCUMENT_ROOT'].'/private/models.tortilla');
